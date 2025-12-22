@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kuis Algoritma - Grokking Algorithms</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="screen active" id="startScreen">
+  <div class="card">
+    <h1>Kuis Algoritma & Struktur Data</h1>
+    <p class="subtitle">
+      Berdasarkan <b>Grokking Algorithms</b><br>
+      KKN = <b>Konsep Kunci Navigasi</b>
+    </p>
+
+    <ul class="info">
+      <li>⏱ Waktu: 40 menit</li>
+      <li>📝 Jumlah soal: 50</li>
+      <li>🔒 Mode ujian</li>
+      <li>⚠️ Keluar fullscreen → ulang dari awal</li>
+    </ul>
+
+    <button id="startBtn">Mulai Kuis</button>
+  </div>
+</div>
+
+<div class="screen" id="quizScreen">
+  <div class="top-bar">
+    <span id="timer">40:00</span>
+    <span id="progress">Soal 1 / 50</span>
+  </div>
+
+  <div class="card">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <button id="nextBtn">Next</button>
+  </div>
+</div>
+
+<div class="screen" id="resultScreen">
+  <div class="card">
+    <h1>Hasil Akhir</h1>
+    <p id="scoreText"></p>
+    <div id="review"></div>
+  </div>
+</div>
+
+<script src="soal, jawaban.js"></script>
+</body>
+</html>
