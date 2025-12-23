@@ -1,11 +1,4 @@
-/* =====================================================
-   QUIZ ALGORITMA – GROKKING ALGORITHMS
-   TOTAL SOAL: 60 (FIX & TERVALIDASI)
-   ===================================================== */
 
-/* ===============================
-   SHUFFLE HELPER
-   =============================== */
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -13,9 +6,6 @@ function shuffle(arr) {
   }
 }
 
-/* ===============================
-   DATA SOAL (60)
-   =============================== */
 const quizData = [
 /* 1–40 KONSEP */
 {q:"Tujuan utama algoritma adalah?",options:["Mempercantik kode","Menyelesaikan masalah secara sistematis","Menambah variabel","Mengurangi RAM"],correct:1},
@@ -87,17 +77,12 @@ const quizData = [
 {q:"Queue: enq1 enq2 deq enq3?",options:["2 3","1 3","3 2","1 2"],correct:0}
 ];
 
-/* ===============================
-   STATE
-   =============================== */
+
 let index = 0;
 let answers = [];
 let time = 2400;
 let timer;
 
-/* ===============================
-   ELEMENT
-   =============================== */
 const startBtn = document.getElementById("startBtn");
 const startScreen = document.getElementById("startScreen");
 const quizScreen = document.getElementById("quizScreen");
@@ -110,9 +95,7 @@ const nextBtn = document.getElementById("nextBtn");
 const scoreText = document.getElementById("scoreText");
 const reviewEl = document.getElementById("review");
 
-/* ===============================
-   FULLSCREEN & RESET
-   =============================== */
+
 function enterFullscreen() {
   document.documentElement.requestFullscreen();
 }
@@ -124,9 +107,7 @@ document.addEventListener("fullscreenchange", () => {
   }
 });
 
-/* ===============================
-   START
-   =============================== */
+
 startBtn.onclick = () => {
   quizData.forEach(q => {
     const correctText = q.options[q.correct];
@@ -140,9 +121,7 @@ startBtn.onclick = () => {
   loadQuestion();
 };
 
-/* ===============================
-   TIMER
-   =============================== */
+
 function startTimer() {
   timer = setInterval(() => {
     time--;
@@ -152,9 +131,7 @@ function startTimer() {
   }, 1000);
 }
 
-/* ===============================
-   LOAD QUESTION
-   =============================== */
+
 function loadQuestion() {
   const q = quizData[index];
   questionEl.textContent = q.q;
@@ -174,18 +151,14 @@ function loadQuestion() {
   });
 }
 
-/* ===============================
-   NEXT
-   =============================== */
+
 nextBtn.onclick = () => {
   if (answers[index] == null) return;
   index++;
   index < quizData.length ? loadQuestion() : finishQuiz();
 };
 
-/* ===============================
-   FINISH
-   =============================== */
+
 function finishQuiz() {
   clearInterval(timer);
   quizScreen.classList.remove("active");
@@ -212,4 +185,5 @@ function finishQuiz() {
   scoreText.textContent = `Skor Akhir: ${score} / 60`;
 }
 
-console.log("TOTAL SOAL:", quizData.length); // HARUS 60
+console.log("TOTAL SOAL:", quizData.length); 
+
